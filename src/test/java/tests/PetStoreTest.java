@@ -14,7 +14,7 @@ import pojo.post.AddPetResponse;
 //Lombok
 //Get Status Code
 //Compare responses
-public class PetStoreTests {
+public class PetStoreTest {
 
     PetApi petApi = new PetApi();
 

@@ -4,7 +4,7 @@ node {
 		}
 	stage ('Build Project'){
 	     script {
-	            sh "mvn clean install"
+	            bat "mvn clean install"
 	     }
 	}
 }

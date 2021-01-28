@@ -8,10 +8,20 @@ node {
 	     }
 	}
 	stage ('Run Tests'){
-    	     script {
-    	            bat "mvn test"
-    	     }
+        script {
+    	    bat "mvn test"
     	}
+    }
+   stage ('Build Report'){
+        script {
+       	    allure ([
+       	        includeProperties: false,
+       	        jdk: '',
+       	        properties: [],
+       	        reportBuildPolicy: 'ALWAYS',
+       	        results: [[path: 'target/allure-results']]])
+       	}
+   }
 }
 
 //pipeline {

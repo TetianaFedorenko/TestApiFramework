@@ -14,11 +14,12 @@ public AddPetResponse addPet(AddPetRequest request) {
         AddPetResponse response = RestAssured
                 .given()
                 .contentType(ContentType.JSON)
-                .baseUri("https://petstore.swagger.io/")
-                .basePath("v2/pet")
+                /*.baseUri("https://petstore.swagger.io/")
+                .basePath("v2/pet")*/
                 .when()
                 .body(request)
-                .post().peek()
+                .post(String.format(PetStoreEndpoint.ADD_PET.getEndpoint()))
+                .peek()
                 .as(AddPetResponse.class);
         return response;
     }
@@ -27,10 +28,10 @@ public AddPetResponse addPet(AddPetRequest request) {
         GetPetResponse response = RestAssured
                 .given()
                 .contentType(ContentType.JSON)
-                .baseUri("https://petstore.swagger.io/")
-                .basePath(String.format("v2/pet/%s", id))
+                /*.baseUri("https://petstore.swagger.io/")
+                .basePath(String.format("v2/pet/%s", id))*/
                 .when()
-                .get()
+                .get(String.format(PetStoreEndpoint.GET_PET.getEndpoint(), id))
                 .peek()
                 .as(GetPetResponse.class);
         return response;

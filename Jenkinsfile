@@ -7,6 +7,11 @@ node {
 	            bat "mvn clean install"
 	     }
 	}
+	stage ('Run Tests'){
+    	     script {
+    	            bat "mvn test"
+    	     }
+    	}
 }
 
 //pipeline {

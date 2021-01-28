@@ -1,4 +1,5 @@
-node {
+pipeline {
+stages {
 	stage ('SCM checkout'){
 		git "https://github.com/TetianaFedorenko/TestApiFramework"
 		}
@@ -21,6 +22,7 @@ node {
        	        reportBuildPolicy: 'ALWAYS',
        	        results: [[path: 'target/allure-results']]])
        	}
+   }
    }
 }
 

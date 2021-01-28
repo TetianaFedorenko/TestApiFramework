@@ -3,11 +3,9 @@ node {
 		git "https://github.com/TetianaFedorenko/TestApiFramework"
 		}
 	stage ('Build Project'){
-	    steps {
-	        script {
-	        	   sh "mvn clean install"
-	        }
-	    }
+	     script {
+	            sh "mvn clean install"
+	     }
 	}
 }
 
